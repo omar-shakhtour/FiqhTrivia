@@ -19,7 +19,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('../triviaBack.png');
+    background-image: url("TriviaBack.png");
     background-size: cover;
     background-repeat:   no-repeat;
     background-position: center center;
