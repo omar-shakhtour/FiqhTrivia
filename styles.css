@@ -1,0 +1,224 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+    font-family:'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+:root{
+    --hue-neutral: 51;
+    --hue-wrong: 0;
+    --hue-correct: 145;
+}
+
+body {
+    --hue: var(--hue-neutral);
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../triviaBack.png');
+    background-size: cover;
+    background-repeat:   no-repeat;
+    background-position: center center;
+    background-color: gold;
+
+}
+
+body.correct {
+    --hue: var(--hue-correct);
+}
+
+body.wrong {
+    --hue: var(--hue-wrong);
+}
+
+.container{
+    width: 800px;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: 0 0 10px 2px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.btn-grid{
+    overflow-wrap: break-word;
+    display: grid;
+    grid-template-columns: repeat(2, 49%);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.btn{
+    --hue: var(--hue-neutral);
+    border: 2px solid;
+    border-color: hsl(var(--hue), 70.5%, 34.5%);
+    background-color: hsl(var(--hue), 98.2%, 57.5%);
+    border-radius: 5px;
+    padding: 10px 10px;
+    color: black;
+    outline: none;
+}
+
+.btn:hover{
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(0, 0, 0, 0.5);
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
+}
+
+.btn[disabled]:hover{
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+.btn.correct {
+    --hue: var(--hue-correct);
+}
+
+.btn.wrong {
+    --hue: var(--hue-wrong);
+    color: white;
+}
+
+.start-btn, .next-btn{
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin: 10px;
+}
+
+.pure-btn, .salah-btn, .zakat-btn, .fasting-btn{
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 30px 30px;
+    margin: 20px 0;
+    display:inline-block;
+}
+
+.pure-btn:hover, .salah-btn:hover, .zakat-btn:hover, .fasting-btn:hover{
+    animation: pulse 2s 1;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+    }
+
+    50% {
+        transform: scale(1.4);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
+
+.chooseControls{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 40px 20px;
+}
+
+#question{
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+    width: 800px;
+    max-width: 80%;
+    margin: auto;
+    background-color: orange;
+    border-radius: 5px;
+    padding: 15px;
+    outline-style: solid;
+    outline-color: rgb(177, 116, 4);
+}
+
+#choose{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    padding-bottom: 10px;
+  }
+
+.start-btn, .next-btn{
+    float: left;
+    background-color: rgb(63, 62, 62);
+    color:rgb(245, 227, 66);
+    border-color: rgb(31, 31, 30)
+}
+
+.start-btn:hover, .next-btn:hover{
+    background-color:rgb(3, 3, 3);
+}
+
+.next-btn{
+    float: right;
+}
+
+.hide{
+    display: none;
+}
+
+#score{
+    font-weight: bold;
+    font-style: italic;
+    font-size: 25px;
+    text-align: center;
+    width: 800px;
+    max-width: 80%;
+    margin: auto;
+    background-color: rgb(63, 62, 62);
+    color:rgb(245, 227, 66);
+    border-style: solid;
+    border-color: rgb(31, 31, 30);
+    border-radius: 20px;
+    padding: 15px;
+}
+
+#info{
+    width: 500px;
+    background-color: rgb(245, 227, 66);
+    outline-style: solid;
+    outline-color: rgb(63, 62, 62);
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 20px;
+    position: fixed;
+    bottom: -4%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.book{
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    color:rgb(63, 62, 62);
+    border-color: rgb(63, 62, 62)
+}
+
+.infoText{
+    font-size: 20px;
+    font-family:'Times New Roman', Times, serif;
+    color:rgb(63, 62, 62);
+}
