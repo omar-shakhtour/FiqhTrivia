@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 *, *::before, *::after{
     box-sizing: border-box;
     font-family:'Roboto', sans-serif;
@@ -5,7 +7,7 @@
 }
 
 :root{
-    --hue-neutral: 51;
+    --hue-neutral: 50;
     --hue-wrong: 0;
     --hue-correct: 145;
 }
@@ -37,7 +39,7 @@ body.wrong {
 
 .container{
     width: 800px;
-    background-color: white;
+    background-color: rgb(29, 29, 29);
     border-radius: 5px;
     text-align: center;
     padding: 10px;
@@ -61,13 +63,14 @@ body.wrong {
 }
 
 .btn{
+    font-family: 'Outfit', sans-serif;
     --hue: var(--hue-neutral);
-    border: 2px solid;
+    border: 0px solid;
     border-color: hsl(var(--hue), 70.5%, 34.5%);
-    background-color: hsl(var(--hue), 98.2%, 57.5%);
+    background-color: hsl(var(--hue), 98.2%, 55.5%);
     border-radius: 5px;
     padding: 10px 10px;
-    color: black;
+    color: rgb(29, 29, 29);
     outline: none;
 }
 
@@ -93,16 +96,10 @@ body.wrong {
     color: white;
 }
 
-.start-btn, .next-btn{
-    font-size: 1.5rem;
-    font-weight: bold;
-    padding: 10px 20px;
-    margin: 10px;
-}
-
 .pure-btn, .salah-btn, .zakat-btn, .fasting-btn{
+    font-family: 'Outfit', sans-serif;
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 500;
     padding: 30px 30px;
     margin: 20px 0;
     display:inline-block;
@@ -137,17 +134,16 @@ body.wrong {
 }
 
 #question{
-    font-weight: bold;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
     font-size: 25px;
     text-align: center;
     width: 800px;
-    max-width: 80%;
+    max-width: 90%;
     margin: auto;
-    background-color: orange;
+    background-color: rgb(255, 234, 117);
     border-radius: 5px;
     padding: 15px;
-    outline-style: solid;
-    outline-color: rgb(177, 116, 4);
 }
 
 #choose{
@@ -155,17 +151,26 @@ body.wrong {
     font-size: 2rem;
     font-weight: bold;
     padding-bottom: 10px;
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 100;
   }
 
 .start-btn, .next-btn{
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
     float: left;
-    background-color: rgb(63, 62, 62);
-    color:rgb(245, 227, 66);
-    border-color: rgb(31, 31, 30)
+    background-color: rgb(29, 29, 29);
+    color:rgb(255,255,255);
+    border-width: 1px;
+    border-color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    margin: 10px;
 }
 
 .start-btn:hover, .next-btn:hover{
-    background-color:rgb(3, 3, 3);
+    background-color:rgb(40,40,40);
 }
 
 .next-btn{
@@ -177,26 +182,45 @@ body.wrong {
 }
 
 #score{
-    font-weight: bold;
-    font-style: italic;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
     font-size: 25px;
     text-align: center;
-    width: 800px;
+    width: 400px;
     max-width: 80%;
     margin: auto;
-    background-color: rgb(63, 62, 62);
-    color:rgb(245, 227, 66);
+    background-color: rgb(29, 29, 29);
+    color:rgb(255, 255, 255);
     border-style: solid;
-    border-color: rgb(31, 31, 30);
-    border-radius: 20px;
+    border-width: 1px;
+    border-color: rgb(255, 255, 255);
+    border-radius: 10px;
     padding: 15px;
+    animation: float 1s ease-in-out infinite;
 }
+
+/*Floating animation source: Copyright (c) 2023 by Mario Duarte (https://codepen.io/MarioDesigns/pen/aQwMgY)*/
+@keyframes float {
+    0% {
+      box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+      transform: translatey(0px);
+    }
+    50% {
+      box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+      transform: translatey(-20px);
+    }
+    100% {
+      box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+      transform: translatey(0px);
+    }
+  }
 
 #info{
     width: 500px;
-    background-color: rgb(245, 227, 66);
+    background-color: rgb(29, 29, 29);
     outline-style: solid;
-    outline-color: rgb(63, 62, 62);
+    outline-width: 0px;
+    outline-color: white;
     border-radius: 5px;
     text-align: center;
     padding: 10px;
@@ -211,14 +235,113 @@ body.wrong {
 }
 
 .book{
-    font-family: 'Times New Roman', Times, serif;
+    font-family:'Outfit', sans-serif;
     font-style: italic;
-    color:rgb(63, 62, 62);
+    font-weight: 100;
+    color:white;
     border-color: rgb(63, 62, 62)
 }
 
 .infoText{
     font-size: 20px;
-    font-family:'Times New Roman', Times, serif;
-    color:rgb(63, 62, 62);
+    font-weight: 100;
+    font-family:'Outfit', sans-serif;
+    color:white;
 }
+
+@media (max-width: 800px){
+    footer{
+        display: none;
+    }
+    .container{
+    width: 500px;
+    }
+    #question{
+        font-size: 20px;
+    }
+    #score{
+        padding: 10px;
+        margin-bottom: 10px;
+        font-size: 20px;
+        width: 300px;
+    }
+    .btn{
+       width: 400px;
+    }
+    .pure-btn, .salah-btn, .zakat-btn, .fasting-btn{
+        width: 200px;
+    }
+    .btn-grid{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .start-btn,.next-btn{
+        width: 150px;
+    }
+}
+
+@media (max-width: 480px){
+    footer{
+        display: none;
+    }
+    .container{
+    width: 500px;
+    box-shadow: none;
+    }
+    body{
+        background-color: rgb(29, 29, 29);
+        background-image: none;
+    }
+    #question{
+        font-size: 20px;
+    }
+    #score{
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    .btn{
+       width: 400px;
+    }
+    .pure-btn, .salah-btn, .zakat-btn, .fasting-btn{
+        width: 200px;
+    }
+    .btn-grid{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .start-btn,.next-btn{
+        width: 150px;
+        font-size: 30px;
+    }
+}
+
+/*
+Anyone is free to use this code on condition that, if they are
+making an Islamic Trivia, they must ensure that the questions and
+answers are accurate and correct.
+
+Copyright (c) 2023 by Omar Shakhtour
+
+Permission is hereby granted, free of charge, 
+to any person obtaining a copy of this software
+and associated documentation files (the "Software"),
+to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge,
+publish, distribute, sublicense, and/or sell copies of the Software,
+and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included
+in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS
+OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
