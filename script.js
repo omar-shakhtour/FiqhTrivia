@@ -464,7 +464,7 @@ const pureQuestions = [
       ]
     },
     {
-      question: 'What is the third level of kaffaara that one should do if they cannot peform the first two?',
+      question: 'What is the third level of kaffaara that one should do if they cannot perform the first two?',
       answers: [
         { text: 'Feed 60 poor people', correct: true },
         { text: 'Fast 2 consecutive months', correct: false },
