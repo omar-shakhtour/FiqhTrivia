@@ -24,6 +24,7 @@ salahButton.addEventListener('click', startSalahTrivia)
 zakatButton.addEventListener('click', startZakatTrivia)
 fastingButton.addEventListener('click', startFastingTrivia)
 nextButton.addEventListener('click', () => {
+  document.getElementById("answer-buttons").style.pointerEvents = "auto";
   currentQuestionIndex++
   setNextQuestion()
 })
@@ -105,6 +106,7 @@ function resetState() {
 }
 
 function selectAnswer(e) {
+  document.getElementById("answer-buttons").style.pointerEvents = "none";
   const selectedButton = e.target
   const correct = selectedButton.dataset.correct
   setStatusClass(document.body, correct)
@@ -114,11 +116,24 @@ function selectAnswer(e) {
   if (shuffledQuestions.length > currentQuestionIndex + 1) {
     nextButton.classList.remove('hide')
   } else {
+    /*  ------- This is to make a seperate "View Score" button ------------
+    nextButton.classList.remove('hide')
+    document.getElementById('next-btn').innerHTML = "View Score"
+    nextButton.addEventListener('click', checkScore)
+    */
     nextButton.classList.add('hide')
     scoreContainer.classList.remove('hide')
     document.getElementById('score').innerHTML = "Your score is: " + numCorrect + "/10"
   }
 }
+
+/* ------- This is to make a seperate "View Score" button ------------
+function checkScore(){
+    questionContainerElement.classList.add('hide')
+    scoreContainer.classList.remove('hide')
+    document.getElementById('score').innerHTML = "Your score is: " + numCorrect + "/10"
+}
+*/
 
 function setStatusClass(element, correct) {
   clearStatusClass(element)
@@ -177,7 +192,7 @@ const pureQuestions = [
         question: 'Which of the following breaks your wudu?',
         answers: [
           { text: 'Losing your mind due to sickness', correct: true },
-          { text: 'Eating part of a whale', correct: false },
+          { text: 'Eating seafood', correct: false },
           { text: 'Touching the water in a swamp', correct: false },
           { text: 'Excessive crying', correct: false }
         ]
