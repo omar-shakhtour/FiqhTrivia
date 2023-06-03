@@ -1,0 +1,422 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*, *::before, *::after{
+    box-sizing: border-box;
+    font-family:'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+:root{
+    --hue-neutral: 50;
+    --hue-wrong: 0;
+    --hue-correct: 145;
+}
+
+body {
+    --hue: var(--hue-neutral);
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("TriviaBack.png");
+    background-size: cover;
+    background-repeat:   no-repeat;
+    background-position: center center;
+    background-color: gold;
+
+}
+
+body.correct {
+    --hue: var(--hue-correct);
+}
+
+body.wrong {
+    --hue: var(--hue-wrong);
+}
+
+.container{
+    width: 800px;
+    background-color: rgb(29, 29, 29);
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: 0 0 10px 2px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.btn-grid{
+    overflow-wrap: break-word;
+    display: grid;
+    grid-template-columns: repeat(2, 49%);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.btn{
+    font-family: 'Outfit', sans-serif;
+    --hue: var(--hue-neutral);
+    border: 0px solid;
+    border-color: hsl(var(--hue), 70.5%, 34.5%);
+    background-color: hsl(var(--hue), 98.2%, 55.5%);
+    border-radius: 5px;
+    padding: 10px 10px;
+    color: rgb(29, 29, 29);
+    outline: none;
+}
+
+.btn:hover{
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(0, 0, 0, 0.5);
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
+}
+
+.btn[disabled]:hover{
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+.btn.correct {
+    --hue: var(--hue-correct);
+}
+
+.btn.wrong {
+    --hue: var(--hue-wrong);
+    color: white;
+}
+
+.pure-btn, .salah-btn, .zakat-btn, .fasting-btn{
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 20px 30px;
+    margin: 20px 0;
+    display:inline-block;
+}
+
+.pure-btn:hover, .salah-btn:hover, .zakat-btn:hover, .fasting-btn:hover{
+    animation: pulse 2s 1;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+    }
+
+    50% {
+        transform: scale(1.4);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
+
+.chooseControls{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 40px 20px;
+}
+
+#question{
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    text-align: center;
+    width: 800px;
+    max-width: 90%;
+    margin: auto;
+    background-color: rgb(255, 234, 117);
+    border-radius: 5px;
+    padding: 15px;
+}
+
+#choose{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    padding-bottom: 10px;
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 100;
+  }
+
+.start-btn, .next-btn{
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    float: left;
+    background-color: rgb(29, 29, 29);
+    color:rgb(255,255,255);
+    border-width: 1px;
+    border-color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    padding: 6px 20px;
+    margin: 10px;
+}
+
+.start-btn:hover, .next-btn:hover{
+    background-color:rgb(40,40,40);
+}
+
+.next-btn{
+    float: right;
+}
+
+.hide{
+    display: none;
+}
+
+#score{
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    font-size: 25px;
+    text-align: center;
+    width: 400px;
+    max-width: 80%;
+    margin: auto;
+    background-color: rgb(29, 29, 29);
+    color:rgb(255, 255, 255);
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 15px;
+    animation: float 1s ease-in-out infinite;
+}
+
+/*Floating animation source: Copyright (c) 2023 by Mario Duarte (https://codepen.io/MarioDesigns/pen/aQwMgY)*/
+@keyframes float {
+    0% {
+      box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+      transform: translatey(0px);
+    }
+    50% {
+      box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+      transform: translatey(-20px);
+    }
+    100% {
+      box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+      transform: translatey(0px);
+    }
+  }
+
+#info{
+    width: 500px;
+    background-color: rgb(29, 29, 29);
+    outline-style: solid;
+    outline-width: 0px;
+    outline-color: white;
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 20px;
+    position: fixed;
+    bottom: -4%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.book{
+    font-family:'Outfit', sans-serif;
+    font-style: italic;
+    font-weight: 100;
+    color:white;
+    border-color: rgb(63, 62, 62)
+}
+
+.infoText{
+    font-size: 20px;
+    font-weight: 100;
+    font-family:'Outfit', sans-serif;
+    color:white;
+}
+
+@media (max-width: 800px){
+    footer{
+        display: none;
+    }
+    .container{
+    width: 500px;
+    }
+    #question{
+        font-size: 20px;
+    }
+    #score{
+        padding: 10px;
+        margin-bottom: 10px;
+        font-size: 20px;
+        width: 300px;
+    }
+    .btn{
+       width: 400px;
+    }
+    .pure-btn, .salah-btn, .zakat-btn, .fasting-btn{
+        width: 200px;
+        padding: 20px 20px;
+    }
+    .btn-grid{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .start-btn,.next-btn{
+        width: 150px;
+    }
+}
+
+@media (max-width: 480px){
+    footer{
+        display: none;
+    }
+    .container{
+    width: 500px;
+    box-shadow: none;
+    }
+    body{
+        background-color: rgb(29, 29, 29);
+        background-image: none;
+    }
+    #question{
+        font-size: 20px;
+    }
+    #score{
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    .btn{
+       width: 400px;
+    }
+    .pure-btn, .salah-btn, .zakat-btn, .fasting-btn{
+        width: 200px;
+        padding: 20px 20px;
+    }
+    .btn-grid{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .start-btn,.next-btn{
+        width: 150px;
+        font-size: 30px;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+    
+}
+
+@media (max-width: 408px){
+    footer{
+        display: none;
+    }
+    .container{
+    width: 500px;
+    box-shadow: none;
+    }
+    body{
+        background-color: rgb(29, 29, 29);
+        background-image: none;
+    }
+    #question{
+        margin-top: 60px;
+        width: 300px;
+        font-size: 17px;
+    }
+    #answer-buttons{
+        font-size: 15px;
+    }
+    button{
+        font-size: 15px;
+    }
+    #choose{
+        font-size: 25px;
+        padding-top: 50px;
+        padding-right: 10px;
+        padding-bottom: 30px;
+        padding-left: 10px;
+        margin-left: 30px;
+        margin-right: 30px;
+        word-wrap: normal;
+    }
+    #score{
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    .btn{
+       width: 300px;
+    }
+    .pure-btn, .salah-btn, .zakat-btn, .fasting-btn{
+        width: 200px;
+        padding: 20px 20px;
+        margin-left: 40px;
+        margin-right: 20px;
+        margin-top: -10px;
+    }
+    .btn-grid{
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+    }
+    .start-btn{
+        margin-left: 60px;
+        margin-bottom: 60px;
+        width: 100px;
+        font-size: 20px;
+    }
+    .next-btn{
+        position: absolute;
+        left: 250px;
+        width: 100px;
+        font-size: 20px;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+    
+}
+
+/*
+Anyone is free to use this code on condition that, if they are
+making an Islamic Trivia, they must ensure that the questions and
+answers are accurate and correct.
+
+Copyright (c) 2023 by Omar Shakhtour
+
+Permission is hereby granted, free of charge, 
+to any person obtaining a copy of this software
+and associated documentation files (the "Software"),
+to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge,
+publish, distribute, sublicense, and/or sell copies of the Software,
+and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included
+in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS
+OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet">
+    <script defer src="script.js"></script>
+    <title>Fiqh Trivia</title>
+</head>
+
+<body>
+    <div class="container">
+        <div id="question-container" class="hide">
+            <div id="question">Question</div>
+            <div id="answer-buttons" class="btn-grid">
+                <button class="btn" onclick=disabled>Answer 1</button>
+                <button class="btn" onclick=disabled>Answer 2</button>
+                <button class="btn" onclick=disabled>Answer 3</button>
+                <button class="btn" onclick=disabled> Answer 4</button>
+            </div>
+        </div>
+        <div id="score-screen" class="hide">
+            <div id="score">Your score is: </div>
+        </div>
+        <div id="chooseControls" class="show">
+            <div id="choose-container" class="show">
+                <div id="choose">Choose Your Fiqh Category:</div>
+                <div id="choose-buttons">
+                    <button id="pure-btn" class="pure-btn btn">Purification</button>
+                    <button id="salah-btn" class="salah-btn btn">Salah</button>
+                    <button id="zakat-btn" class="zakat-btn btn">Zakat</button>
+                    <button id="fasting-btn" class="fasting-btn btn">Fasting</button>
+                </div>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="start-btn" class="start-btn btn">Home</button>
+            <button id="next-btn" class="next-btn btn hide">Next</button>
+        </div>
+    </div>
+    <footer id="info"><span class="infoText">Shafi'i fiqh trivia based on the book </span><span class="book">'Matn Abi
+            Shuja'</span></footer>
+</body>
+
+</html>
